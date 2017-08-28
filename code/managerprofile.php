@@ -1,4 +1,5 @@
 
+
 <?php
 
 //}
@@ -183,8 +184,8 @@ echo 'Error!';
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<link rel="stylesheet" href="styles/w3.css">
+<link rel="stylesheet" href="Styles/Teal.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -205,9 +206,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 <div class="w3-top">
  <div class="w3-bar w3-theme-d2 w3-left-align">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Saheb</a>
-  <a href="#Claim_Your Profile" class="w3-bar-item w3-button #009688">Claim Your Profile</a>
-  <a href="managerview.php" class="w3-bar-item w3-button w3-right #009688">Review Your Manager</a>
+  <a href="managerhome.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Saheb</a>
+  <a href="#" class="w3-bar-item w3-button w3-right #009688">Claim Your Profile</a>
+  <a href="#" class="w3-bar-item w3-button w3-right #009688">Review This Boss</a>
  
   <!--  <div class="w3-dropdown-hover w3-hide-small">
     <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
@@ -215,8 +216,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <a href="#" class="w3-bar-item w3-button">Link</a>
       <a href="#" class="w3-bar-item w3-button">Link</a>
       <a href="#" class="w3-bar-item w3-button">Link</a>-->
-   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-w3-light-grey" title="Search"><i class="fa fa-search"></i></a>
-      </div>
+   
+   <input type="text" class="w3-bar-item w3-input" placeholder="Search for a boss">
+   <a href="managerview.php" class="w3-bar-item w3-button w3-green"><i class="fa fa-search" aria-hidden="true"></i>&nbsp</a>
+     
+           
    <!--</div>
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
  </div>-->
@@ -229,6 +233,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <a href="#contact" class="w3-bar-item w3-button">Contact</a>
     <a href="#" class="w3-bar-item w3-button">Search</a>
   </div>
+</div>
 </div>
 
 <!-- Image Header 
@@ -271,10 +276,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <input class="w3-input w3-border" name="mk_manageremail" type="text" placeholder="Email">
     </div>
 </div>
-
+    
 </form>
 <p class="w3-center">
 <button class="w3-button w3-section w3-Teal w3-ripple"> submit </button>
+<p class="w3-center">Thank you! We will review and publish your updates shortly. - Publish after submit</p>
  <!--<a href="manageredit.php" class="w3-button w3-teal">Link Button</a>-->
     
     <!--<script>
@@ -306,7 +312,7 @@ function formSuccess(){
 }
     </script>-->
 </p>
-        <p>Cool huh? Ok, enough teasing around..</p>
+        
       <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
     </div>
     <footer class="w3-container w3-teal">
@@ -327,17 +333,22 @@ function formSuccess(){
         
           <div class="w3-display-container">            
 
-                      <div class="w3-card-4">
-                          <img src="Images\Profile Pic.png" alt="Person">
+                      <div class="w3-card-4" style="width:100%">
+                          <img src="Images\Avatar.png" alt="Person" style="width:100%">
                    
                       </div>
                       
-          <div class="w3-display-bottomleft w3-container w3-text-white">
-            <p><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-teal">Edit Profile</button></p>
+          <div class="w3-display-bottomright w3-container w3-text-white">
+            <p><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-round w3-medium w3-padding-small">Edit Profile</button></p>
+              
+              
           </div>
-        </div>
+        </div>     
+      </div>
 
+        <br>
 
+<div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-container">
             <h2>
                 <?php print $mk_managerfirst . " " . $mk_managerlast;?>
@@ -351,60 +362,50 @@ function formSuccess(){
               
           <!--<p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>-->
-          <hr>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-balance-scale fa-fw w3-margin-right w3-text-teal"></i>Review Summary </b></p>
-          <p>Summary</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
-          </div>
-            <hr>
-          <p>Skills</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
-            </div>
-          </div>
-          <p>Ability</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-          </div>
-          <p>Flexibility</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-          </div>
-           <p>Will you work for this manager again?</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-          </div>
-          <br>
-
-
-          
-          <br>
+   
         </div>
-      </div><br>
+    </div>
 
     <!-- End Left Column -->
     </div>
 
     <!-- Center Column -->
     <div class="w3-half">
-    
-      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Feedback By Others</h2>
+   
+<div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>
-      <div class="fb-comments" data-href="http://localhost:8971/managerprofile.php?mk_id=2" data-numposts="5"></div>
+            <div class="w3-container w3-padding">
+               <p contenteditable="true" class="w3-border w3-padding w3-opacity ">Do we need a comments bar here?</p>
+              <button type="button" class="w3-button w3-theme"><i class="fa fa-pencil "></i>  Post</button>
+            </div>
+          </div>
+         </div>
+           <br>
 
+<div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-container">
+    
+        
+          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-comments-o fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Comments By Others <hr> </h2>
+        
+          <h5 class="w3-opacity"><b>Posted on 03-22-2016</b></h5>
+           <p><i class="fa fa-plus-square w3-text-Green" aria-hidden="true" ></i>
+              Agreed with most comments here. Really great manager, knows his work, and works very well in silo</p>
+          <p><i class="fa fa-minus-square w3-text-crimson" aria-hidden="true" ></i>
+              For him to progress ahead, he should be more comfortable to delegate work to juniors under him.  I recommend, he should structure his thoughts before shipping work to someone else and be more comfortable acting in a reviewer capacity</p>
+                           
           <hr>
-        </div>
+
+           <h5 class="w3-opacity"><b>Posted on 02-07-2015</b></h5>
+           <p><i class="fa fa-plus-square w3-text-Green" aria-hidden="true" ></i>
+              He is a great guy. </p>
+          <p><i class="fa fa-minus-square w3-text-crimson" aria-hidden="true" ></i>
+              Needs to polish his communication, delegation skills.  Not a guy who like happy hours so you wont find him there, but this should not be take as a critisism</p>       
         
        
       </div>
       </div>
+         </div>
 
       
 
@@ -414,25 +415,35 @@ function formSuccess(){
     <div class="w3-quarter">
     
       <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Leave A Review</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Skills Section</b></h5>
-          <!--h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>-->
-          <p>Skills Question 1</p>
-            <div class="rw-ui-container"></div>
-          <p>Skills Question 1</p>
-            <div class="rw-ui-container"></div>
-          <hr>
-        </div>
+     <p class="w3-large w3-text-theme w3-center"><b>Review Score </b></p>
+                    <!--<div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+          </div>-->
+          
+            <div class="w3-container w3-center">
+             <span class="w3-tag w3-jumbo w3-round-xlarge w3-teal"> 3.8<span class="w3-xlarge"></span>
+          </div>
+            
 
-          <div class="w3-container">
-          <h5 class="w3-opacity"><b>Ability Section</b></h5>
-          <!--h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>-->
-          <p>Ability Question 1</p>
-            <div class="rw-ui-container"></div>
-          <p>Ability Question 1</p>
-            <div class="rw-ui-container"></div>
-          <hr>
+            <hr>
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-balance-scale fa-fw w3-margin-right w3-text-teal"></i>Score Breakdown </b></p>
+          <p>Skills</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:0%">0</div>
+          </div>
+          <p>Ability</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">3.8</div>
+          </div>
+          <p>Flexibility</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">3.8</div>
+          </div>
+           <p>Will you work for this manager again?</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:100%">5</div>
+          </div>
+          <br>
         </div>
 
 
@@ -461,15 +472,15 @@ function formSuccess(){
     
     // Async Rating-Widget initialization.
     window.RW_Async_Init = function(){
+            huid: "369217",
+            uid: "3b1a75ed8a7f6b4e16f2d8
                 
         RW.init({
-            huid: "369217",
-            uid: "3b1a75ed8a7f6b4e16f2d8f353ceecab",
+                "isDummy": falsef353ceecab",
             source: "website",
             options: {
                 "size": "medium",
                 "style": "oxygen",
-                "isDummy": false
             } 
         });
         RW.render();
